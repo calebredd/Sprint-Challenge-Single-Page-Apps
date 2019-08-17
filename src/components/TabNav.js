@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Menu, Icon } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
+import SearchForm from "./SearchForm";
 
 import "semantic-ui-css/semantic.min.css";
 
@@ -21,7 +22,7 @@ export default function TabNav() {
           Home Page
         </Menu.Item>
       </NavLink>
-      <NavLink to="/Characters">
+      <NavLink to="/character">
         <Menu.Item
           name="Characters"
           active={activeItem === "Characters"}
@@ -31,7 +32,7 @@ export default function TabNav() {
           Characters
         </Menu.Item>
       </NavLink>
-      <NavLink to="/Locations">
+      <NavLink to="/location">
         <Menu.Item
           name="Locations"
           active={activeItem === "Locations"}
@@ -41,7 +42,7 @@ export default function TabNav() {
           Locations
         </Menu.Item>
       </NavLink>
-      <NavLink to="/Episodes">
+      <NavLink to="/episode">
         <Menu.Item
           name="Episodes"
           active={activeItem === "Episodes"}
@@ -51,6 +52,7 @@ export default function TabNav() {
           Episodes
         </Menu.Item>
       </NavLink>
+      <Menu.Item><SearchForm/></Menu.Item>
     </Menu>
   );
 }

@@ -10,11 +10,11 @@ export default function AppRouter() {
     <div className="Route">
       <Route exact path="/" component={WelcomePage} />
 
-      <Route path="/Characters" component={CharacterList} />
+      <Route path="/character" component={CharacterList} />
 
-      <Route path="/Locations" component={LocationsList} />
+      <Route path="/location" component={LocationsList} />
 
-      <Route path="/Episodes" component={EpisodesList} />
+      <Route path="/episode" component={EpisodesList} />
     </div>
   );
 }
