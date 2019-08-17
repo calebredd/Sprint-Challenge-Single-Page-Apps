@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { Tab, Menu, Icon } from "semantic-ui-react";
+import { Menu, Icon } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
+
+import "semantic-ui-css/semantic.min.css";
 
 // TODO: Add missing tabs below
 export default function TabNav() {
@@ -8,39 +10,47 @@ export default function TabNav() {
 
   return (
     <Menu tabular>
-      <Menu.Item
-        name="Home Page"
-        active={activeItem === "Home Page"}
-        onClick={()=>setActiveItem("Home Page")}
-      >
-        {" "}
-        <Icon name="home" />
-        Home Page
-      </Menu.Item>
-      <Menu.Item
-        name="Characters"
-        active={activeItem === "Characters"}
-        onClick={()=>setActiveItem("Characters")}
-      >
-        <Icon name="smile" />
-        Characters
-      </Menu.Item>
-      <Menu.Item
-        name="Locations"
-        active={activeItem === "Locations"}
-        onClick={()=>setActiveItem("Locations")}
-      >
-        <Icon name="map marker alternate" />
-        Locations
-      </Menu.Item>
-      <Menu.Item
-        name="Episodes"
-        active={activeItem === "Episodes"}
-        onClick={()=>setActiveItem("Episodes")}
-      >
-        <Icon name="tv" />
-        Episodes
-      </Menu.Item>
+      <NavLink to="/">
+        <Menu.Item
+          name="Home Page"
+          active={activeItem === "Home Page"}
+          onClick={() => setActiveItem("Home Page")}
+        >
+          {" "}
+          <Icon name="home" />
+          Home Page
+        </Menu.Item>
+      </NavLink>
+      <NavLink to="/Characters">
+        <Menu.Item
+          name="Characters"
+          active={activeItem === "Characters"}
+          onClick={() => setActiveItem("Characters")}
+        >
+          <Icon name="group" />
+          Characters
+        </Menu.Item>
+      </NavLink>
+      <NavLink to="/Locations">
+        <Menu.Item
+          name="Locations"
+          active={activeItem === "Locations"}
+          onClick={() => setActiveItem("Locations")}
+        >
+          <Icon name="map marker alternate" />
+          Locations
+        </Menu.Item>
+      </NavLink>
+      <NavLink to="/Episodes">
+        <Menu.Item
+          name="Episodes"
+          active={activeItem === "Episodes"}
+          onClick={() => setActiveItem("Episodes")}
+        >
+          <Icon name="video" />
+          Episodes
+        </Menu.Item>
+      </NavLink>
     </Menu>
   );
 }
