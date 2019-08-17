@@ -1,21 +1,17 @@
-import React, { state } from "react";
+import React, { useState } from "react";
 import { Tab, Menu, Icon } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
 
 // TODO: Add missing tabs below
 export default function TabNav() {
-  // state = { activeItem: "Home Page" };
+  const [activeItem, setActiveItem] = useState("Home Page");
 
-  // handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
-  // const { activeItem } = this.state;
   return (
     <Menu tabular>
       <Menu.Item
         name="Home Page"
-        active="Home Page"
-        // {activeItem === "Home Page"}
-        // onClick={this.handleItemClick}
+        active={activeItem === "Home Page"}
+        onClick={()=>setActiveItem("Home Page")}
       >
         {" "}
         <Icon name="home" />
@@ -23,24 +19,24 @@ export default function TabNav() {
       </Menu.Item>
       <Menu.Item
         name="Characters"
-        // active={activeItem === "Characters"}
-        // onClick={this.handleItemClick}
+        active={activeItem === "Characters"}
+        onClick={()=>setActiveItem("Characters")}
       >
         <Icon name="smile" />
         Characters
       </Menu.Item>
       <Menu.Item
         name="Locations"
-        // active={activeItem === "Locations"}
-        // onClick={this.handleItemClick}
+        active={activeItem === "Locations"}
+        onClick={()=>setActiveItem("Locations")}
       >
         <Icon name="map marker alternate" />
         Locations
       </Menu.Item>
       <Menu.Item
         name="Episodes"
-        // active={activeItem === "Episodes"}
-        // onClick={this.handleItemClick}
+        active={activeItem === "Episodes"}
+        onClick={()=>setActiveItem("Episodes")}
       >
         <Icon name="tv" />
         Episodes
