@@ -15,6 +15,7 @@ export default function AppRouter() {
       <Route path="/location" component={LocationsList} />
 
       <Route path="/episode" component={EpisodesList} />
+
     </div>
   );
 }

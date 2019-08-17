@@ -6,7 +6,7 @@ import SearchForm from "./SearchForm";
 import "semantic-ui-css/semantic.min.css";
 
 // TODO: Add missing tabs below
-export default function TabNav() {
+export default function TabNav({results, setResults}) {
   const [activeItem, setActiveItem] = useState("Home Page");
 
   return (
@@ -52,7 +52,9 @@ export default function TabNav() {
           Episodes
         </Menu.Item>
       </NavLink>
-      <Menu.Item><SearchForm/></Menu.Item>
+      <Menu.Item>
+        <SearchForm results={results} setResults={setResults} />
+      </Menu.Item>
     </Menu>
   );
 }
